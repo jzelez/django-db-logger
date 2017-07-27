@@ -8,9 +8,9 @@ from .models import StatusLog
 
 
 class StatusLogAdmin(admin.ModelAdmin):
-    list_display = ('colored_msg', 'traceback', 'create_datetime_format')
+    list_display = ('create_datetime_format', 'logger_name', 'colored_msg', 'traceback')
     list_display_links = ('colored_msg', )
-    list_filter = ('level', )
+    list_filter = ('level', 'logger_name')
     list_per_page = 10
 
     def colored_msg(self, instance):
@@ -28,7 +28,7 @@ class StatusLogAdmin(admin.ModelAdmin):
 
     def create_datetime_format(self, instance):
         return instance.create_datetime.strftime('%Y-%m-%d %X')
-    create_datetime_format.short_description = 'Create Datetime'
+    create_datetime_format.short_description = 'Created at'
 
 
 admin.site.register(StatusLog, StatusLogAdmin)
