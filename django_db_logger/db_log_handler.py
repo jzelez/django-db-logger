@@ -14,7 +14,7 @@ class DatabaseLogHandler(logging.Handler):
         kwargs = {
             'logger_name': record.name,
             'level': record.levelno,
-            'extra': getattr(record, 'extra', None),
+            'extra_data': getattr(record, 'extra_data', None),
             'msg': record.getMessage(),
             'trace': trace
         }
