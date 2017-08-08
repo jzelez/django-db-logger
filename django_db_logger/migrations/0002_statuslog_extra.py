@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='statuslog',
-            name='extra_data',
+            name='extra',
             field=models.TextField(blank=True, null=True),
         ),
     ]

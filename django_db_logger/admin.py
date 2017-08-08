@@ -8,7 +8,7 @@ from .models import StatusLog
 
 
 class StatusLogAdmin(admin.ModelAdmin):
-    list_display = ('create_datetime_format', 'logger_name', 'colored_msg', 'traceback', 'extra_data')
+    list_display = ('create_datetime_format', 'logger_name', 'colored_msg', 'traceback', 'extra')
     list_display_links = ('colored_msg', )
     list_filter = ('level', 'logger_name')
     list_per_page = 10
